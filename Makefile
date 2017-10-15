@@ -1,13 +1,4 @@
-#  ---------------------------------------------------------------
-#  Makefile
-#
-#  Atul Varma
-#  Python C Compiler - Makefile
-#  $Id: Makefile,v 1.8 2004/06/02 21:11:57 varmaa Exp $
-#
-#  This just makes all the sample code and lets you clean up
-#  intermediate/output files.
-#  ---------------------------------------------------------------
+
 
 FLAGS=-annotate -ast
 PYTHON=python
