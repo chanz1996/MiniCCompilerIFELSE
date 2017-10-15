@@ -1,0 +1,138 @@
++ TranslationUnit
+    + Declaration
+      Type-string: function(pointer(char))->int
+      has_return_stmt: 0
+      compile_loc: printf
+      static: 0
+      is_used: 1
+      extern: 1
+      name: printf
+      Type:
+        + FunctionType
+          Parameters::
+            + ParamList
+              has_ellipsis: 1
+                + Declaration
+                  Type-string: pointer(char)
+                  extern: 0
+                  static: 0
+                  name: str
+                  is_used: 0
+                  Type:
+                    + PointerType
+                      Child::
+                        + BaseType
+                          type_str: char
+          Child::
+            + BaseType
+              type_str: int
+    + FunctionDefn
+      Type-string: function(int,pointer(pointer(char)))->int
+      name: main
+      compile_loc: main
+      static: 0
+      extern: 0
+      Type:
+        + FunctionType
+          Parameters::
+            + ParamList
+              has_ellipsis: 0
+                + Declaration
+                  Type-string: int
+                  name: argc
+                  compile_loc: 8(%ebp)
+                  static: 0
+                  is_used: 0
+                  extern: 0
+                  param_num: 0
+                  Type:
+                    + BaseType
+                      type_str: int
+                + Declaration
+                  Type-string: pointer(pointer(char))
+                  name: argv
+                  compile_loc: 12(%ebp)
+                  static: 0
+                  is_used: 0
+                  extern: 0
+                  param_num: 1
+                  Type:
+                    + PointerType
+                      Child::
+                        + PointerType
+                          Child::
+                            + BaseType
+                              type_str: char
+          Child::
+            + BaseType
+              type_str: int
+      Body:
+        + CompoundStatement
+          has_return_stmt: 1
+          Declaration list:
+            + DeclarationList
+                + Declaration
+                  Type-string: char
+                  name: c
+                  compile_loc: -5(%ebp)
+                  static: 0
+                  is_used: 1
+                  extern: 0
+                  Type:
+                    + BaseType
+                      type_str: char
+                + Declaration
+                  Type-string: int
+                  name: i
+                  compile_loc: -4(%ebp)
+                  static: 0
+                  is_used: 0
+                  extern: 0
+                  Type:
+                    + BaseType
+                      type_str: int
+          Statement list:
+            + StatementList
+              has_return_stmt: 1
+                + Binop
+                  Type-string: char
+                  has_return_stmt: 0
+                  op: =
+                  Left operand:
+                    + Id
+                      Type-string: char
+                      name: c
+                      output_addr: 1
+                      has_addr: 1
+                      lineno: 12
+                  Right operand:
+                    + Const
+                      Type-string: char
+                      value: 104
+                      Type:
+                        + BaseType
+                          type_str: char
+                + FunctionExpression
+                  Type-string: int
+                  has_return_stmt: 0
+                  Function:
+                    + Id
+                      Type-string: function(pointer(char))->int
+                      name: printf
+                      output_addr: 0
+                      has_addr: 1
+                      lineno: 14
+                  Arguments:
+                    + ArgumentList
+                        + StringLiteral
+                          Type-string: pointer(char)
+                          Value: "hello world"
+                + ReturnStatement
+                  has_return_stmt: 1
+                  Expression:
+                    + Const
+                      Type-string: int
+                      value: 0
+                      Type:
+                        + BaseType
+                          type_str: int
